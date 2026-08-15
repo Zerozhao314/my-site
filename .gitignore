@@ -1,0 +1,37 @@
+# DDEV 与 Git 集成 —— 忽略环境生成/WP核心/第三方件/本地敏感文件
+
+# DDEV 自动生成的项目配置(含 config.yaml、traefik 证书等,本地环境特定)
+.ddev/
+
+# WordPress 核心代码(DDEV 管理,不入库;含 wp-config.php 等自动生成文件)
+wp-admin/
+wp-includes/
+wp-*.php
+/index.php
+/license.txt
+/readme.html
+/xmlrpc.php
+/.htaccess
+
+# Composer / Node 依赖
+vendor/
+node_modules/
+
+# WordPress 上传文件(用户媒体,不入库)
+wp-content/uploads/
+
+# wp-content 第三方件(插件有独立仓库,部署副本不跟踪)
+wp-content/plugins/
+wp-content/themes/
+wp-content/languages/
+wp-content/updraft/
+wp-content/upgrade-temp-backup/
+wp-content/upgrade/
+wp-content/.htaccess
+wp-content/index.php
+wp-content/*.log
+wp-content/sgs_encrypt_key.php
+wp-content/sg_wizard_themes_data.json
+
+# 环境变量(敏感,不入库)
+.env
